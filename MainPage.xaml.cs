@@ -19,6 +19,8 @@ using Windows.Storage;
 using Windows.Storage.Streams;
 using System.IO;
 
+using Microsoft.Phone.Tasks;
+
 using BTConnection;
 
 namespace btPrint4wp
@@ -26,7 +28,7 @@ namespace btPrint4wp
     public partial class MainPage : PhoneApplicationPage
     {
         BTConnection.ConnectionManager btConn;
-        PeerInformation peerInformation;
+        public PeerInformation peerInformation;
         public string sFileName = "";
 
         // Constructor
@@ -63,6 +65,9 @@ namespace btPrint4wp
         {
             try
             {
+                NavigationService.Navigate(new Uri("/btdevices.xaml", UriKind.Relative));
+                return;
+
                 //PeerFinder.AlternateIdentities["Bluetooth:Paired"] = "";
                 PeerFinder.AlternateIdentities["Bluetooth:SDP"] = "{00001101-0000-1000-8000-00805F9B34FB}";
 
@@ -87,10 +92,18 @@ namespace btPrint4wp
                 if ((uint)ex.HResult == 0x8007048F)
                 {
                     MessageBox.Show("Bluetooth is turned off");
+                    showBTSettings();
                 }
             }
         }
 
+        void showBTSettings()
+        {
+            var task = new ConnectionSettingsTask();
+            task.ConnectionSettingsType = ConnectionSettingsType.Bluetooth;
+            task.Show();
+
+        }
         private void btConnect_Click(object sender, RoutedEventArgs e)
         {
             if (peerInformation == null)
@@ -111,7 +124,7 @@ namespace btPrint4wp
             return;
         }
 
-        private async void btnPrint_Click(object sender, RoutedEventArgs e)
+        private void btnPrint_Click(object sender, RoutedEventArgs e)
         {
             try
             {
