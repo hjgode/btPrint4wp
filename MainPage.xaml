@@ -42,14 +42,21 @@
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
             <TextBlock Text="btPrint4wp" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0"/>
-            <TextBlock Text="print demo" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+            <TextBlock Text="print demo" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" FontSize="48"/>
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
-        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <Button x:Name="btSearch" Content="search device" HorizontalAlignment="Left" Margin="101,25,0,0" VerticalAlignment="Top" Width="250" Click="btSearch_Click"/>
-            <TextBlock x:Name="textBoxPeer" HorizontalAlignment="Left" Height="47" Margin="55,102,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="334" FontSize="36" TextAlignment="Center"/>
-            <Button x:Name="btConnect" Content="connect" HorizontalAlignment="Left" Margin="101,154,0,0" VerticalAlignment="Top" Width="250" Click="btConnect_Click"/>
+        <Grid x:Name="ContentPanel" Margin="14,97,10,0" Grid.RowSpan="2">
+            <Button x:Name="btnSearch" Content="search device" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="250" Click="btSearch_Click" FontSize="22"/>
+            <TextBlock x:Name="textBoxPeer" HorizontalAlignment="Left" Height="28" Margin="112,79,0,0" TextWrapping="Wrap" Text="search first" VerticalAlignment="Top" Width="334" FontSize="24" TextAlignment="Center"/>
+            <Button x:Name="btnConnect" Content="connect" HorizontalAlignment="Left" Margin="10,117,0,0" VerticalAlignment="Top" Width="250" Click="btConnect_Click"/>
+            <Button x:Name="btnPrint" Content="print" HorizontalAlignment="Left" Margin="196,311,0,0" VerticalAlignment="Top" Width="250" Click="btnPrint_Click"/>
+            <Button x:Name="btDisconnect" Content="disconnect" HorizontalAlignment="Left" Height="77" Margin="10,385,0,0" VerticalAlignment="Top" Width="250" Click="btDisconnect_Click"/>
+            <ScrollViewer HorizontalAlignment="Left" Height="142" Margin="10,462,0,0" VerticalAlignment="Top" Width="436">
+                <TextBox x:Name="txtLog" TextWrapping="Wrap" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" IsReadOnly="True" Background="{StaticResource PhoneBackgroundBrush}" Foreground="{StaticResource PhoneTextBoxEditBackgroundBrush}"/>
+            </ScrollViewer>
+            <Button Content="Select Demo Label" HorizontalAlignment="Left" Height="75" Margin="10,191,0,0" VerticalAlignment="Top" Width="250" Click="Button_Click"/>
+            <TextBlock x:Name="txtFile" HorizontalAlignment="Left" Height="35" Margin="112,271,0,0" TextWrapping="Wrap" Text="select demo file" VerticalAlignment="Top" Width="334" FontSize="24" TextAlignment="Center"/>
 
         </Grid>
 
