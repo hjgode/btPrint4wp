@@ -40,6 +40,7 @@ namespace btPrint4wp
                 else
                 {
                     MessageBox.Show("No active peers");
+                    showBTSettings();
                 }
             }
             catch (Exception ex)
@@ -85,8 +86,11 @@ namespace btPrint4wp
 
         private void btnOK_Click(object sender, RoutedEventArgs e)
         {
-            _peerInformation = ((btdevice) (btlist.SelectedItem)).peerinfo;
-            txtPeername.Text = _peerInformation.DisplayName;
+            if (btlist.SelectedItem != null)
+            {
+                _peerInformation = ((btdevice)(btlist.SelectedItem)).peerinfo;
+                txtPeername.Text = _peerInformation.DisplayName;
+            }
             NavigationService.GoBack();
         }
 

@@ -22,18 +22,26 @@
 
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock Text="btPrint4" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBlock Text="demo files" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+            <TextBlock Text="MY APPLICATION" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock Text="page name" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
-        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="14,23,10,-23">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            <ListBox x:Name="listBox" Height="242" Margin="10,78,10,0" VerticalAlignment="Top" SelectionChanged="listBox_SelectionChanged" FontSize="20"/>
-            <TextBox x:Name="txtFilename" HorizontalAlignment="Left" Height="65" Margin="8,8,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="327"/>
-            <Button x:Name="btnOK" Content="OK" HorizontalAlignment="Left" Height="65" Margin="340,8,0,0" VerticalAlignment="Top" Width="106" Click="btnOK_Click"/>
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <Button Width="Auto" Height="120" Tag="filename" >
+                <Button.Content>
+                    <StackPanel Orientation="Horizontal" Height="80" >
+                        <Image Source="images/pb42.gif" Width="80" Height="80"/>
+                        <StackPanel Orientation="Horizontal" Height="80">
+                            <TextBlock MaxWidth="120" FontSize="22" Text="filedescription" MinWidth="80" ScrollViewer.VerticalScrollBarVisibility="Auto" Margin="0,0,5,0" TextWrapping="Wrap"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Height="80" Margin="5,0,0,0">
+                            <TextBlock MaxWidth="120" FontSize="22"  Text="filehelp" MinWidth="100"  ScrollViewer.VerticalScrollBarVisibility="Auto" TextWrapping="Wrap"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Button.Content>
+            </Button>
+
         </Grid>
     </Grid>
 

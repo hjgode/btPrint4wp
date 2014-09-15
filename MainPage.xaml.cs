@@ -61,14 +61,15 @@ namespace btPrint4wp
             //System.Threading.Thread.Sleep(2000);
         }
 
-        private async void btSearch_Click(object sender, RoutedEventArgs e)
+        private void btSearch_Click(object sender, RoutedEventArgs e)
         {
             try
             {
                 NavigationService.Navigate(new Uri("/btdevices.xaml", UriKind.Relative));
                 return;
 
-                //PeerFinder.AlternateIdentities["Bluetooth:Paired"] = "";
+                /*
+                PeerFinder.AlternateIdentities["Bluetooth:Paired"] = "";
                 PeerFinder.AlternateIdentities["Bluetooth:SDP"] = "{00001101-0000-1000-8000-00805F9B34FB}";
 
                 var peerList = await PeerFinder.FindAllPeersAsync();
@@ -86,6 +87,7 @@ namespace btPrint4wp
                 {
                     MessageBox.Show("No active peers");
                 }
+                */
             }
             catch (Exception ex)
             {
@@ -198,7 +200,7 @@ namespace btPrint4wp
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Uri("/Page1.xaml", UriKind.Relative));
+            NavigationService.Navigate(new Uri("/PrintfilesList.xaml", UriKind.Relative));
             
         }
 

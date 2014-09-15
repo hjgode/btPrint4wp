@@ -28,9 +28,9 @@
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <ListBox x:Name="btlist" Margin="0,69,0,0" SelectionChanged="btlist_SelectionChanged"></ListBox>
-            <TextBlock x:Name="txtPeername" HorizontalAlignment="Left" Height="37" Margin="11,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="309"/>
-            <Button x:Name="btnOK" Content="OK" HorizontalAlignment="Left" Height="61" Margin="325,3,0,0" VerticalAlignment="Top" Width="93" Click="btnOK_Click"/>
+            <ListBox x:Name="btlist" Margin="0,85,0,0" SelectionChanged="btlist_SelectionChanged" Foreground="#FF80FF00" FontSize="36"></ListBox>
+            <TextBlock x:Name="txtPeername" HorizontalAlignment="Left" Height="37" Margin="11,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="309" FontSize="36" Foreground="#FF2DF900"/>
+            <Button x:Name="btnOK" Content="OK" HorizontalAlignment="Left" Height="82" Margin="325,3,0,0" VerticalAlignment="Top" Width="93" Click="btnOK_Click" FontSize="22"/>
         </Grid>
     </Grid>
 
