@@ -97,10 +97,13 @@
     <Compile Include="btdevices.xaml.cs">
       <DependentUpon>btdevices.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DemoFilesClass.cs">
+    <Compile Include="DemoFile.cs" />
+    <Compile Include="DemoFilesXML.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DemoFilesXML.cs" />
+    <Compile Include="DemoFilesFileBased.cs" />
+    <Compile Include="DemoFilesXMLBased.cs" />
+    <Compile Include="IDemoFile.cs" />
     <Compile Include="LocalizedStrings.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -161,6 +164,7 @@
     <Content Include="printfiles\ipl4upsearlylabel.prn" />
     <Content Include="printfiles\xsim2global.prn" />
     <Content Include="printfiles\xsim3global.prn" />
+    <None Include="btPrint4wp_2014_09_16_14_32_35.sap" />
     <None Include="Properties\AppManifest.xml" />
     <None Include="Properties\WMAppManifest.xml">
       <SubType>Designer</SubType>

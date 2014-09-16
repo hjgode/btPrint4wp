@@ -5,6 +5,12 @@ ehthumbs.db
 Bin\*
 Bin/*
 
+*\obj\*
+*\Bin\*
+*.suo
+*.user
+*/obj/*
+
 # Folder config file
 Desktop.ini
 

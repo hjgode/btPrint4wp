@@ -30,15 +30,20 @@
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
             <Button Width="Auto" Height="120" Tag="filename" >
                 <Button.Content>
-                    <StackPanel Orientation="Horizontal" Height="80" >
-                        <Image Source="images/pb42.gif" Width="80" Height="80"/>
-                        <StackPanel Orientation="Horizontal" Height="80">
-                            <TextBlock MaxWidth="120" FontSize="22" Text="filedescription" MinWidth="80" ScrollViewer.VerticalScrollBarVisibility="Auto" Margin="0,0,5,0" TextWrapping="Wrap"/>
-                        </StackPanel>
-                        <StackPanel Orientation="Horizontal" Height="80" Margin="5,0,0,0">
-                            <TextBlock MaxWidth="120" FontSize="22"  Text="filehelp" MinWidth="100"  ScrollViewer.VerticalScrollBarVisibility="Auto" TextWrapping="Wrap"/>
-                        </StackPanel>
-                    </StackPanel>
+                    <Grid x:Name="buttongrid" Width="400">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Source="images/pb42.gif" Width="80" Height="80"/>
+                        <TextBlock Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" FontSize="22" Text="filedescription" TextWrapping="Wrap"/>
+                        <TextBlock Grid.Row="0" Grid.Column="2" Grid.RowSpan="2" MaxWidth="120" FontSize="22"  Text="filehelp" TextWrapping="Wrap"/>
+                        
+                    </Grid>
                 </Button.Content>
             </Button>
 

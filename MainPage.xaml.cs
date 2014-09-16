@@ -39,6 +39,7 @@ namespace btPrint4wp
             btConn.ConnectDone += btConn_ConnectDone;
             btConn.MessageReceived += btConn_MessageReceived;
 
+
             /*
             try
             {
@@ -53,6 +54,7 @@ namespace btPrint4wp
             //BuildLocalizedApplicationBar();
         }
 
+
         void btConn_ConnectDone(Windows.Networking.HostName deviceHostName)
         {
             //await btConn.send("Hello \n");
@@ -64,8 +66,9 @@ namespace btPrint4wp
         private void btSearch_Click(object sender, RoutedEventArgs e)
         {
             try
-            {
+            {                
                 NavigationService.Navigate(new Uri("/btdevices.xaml", UriKind.Relative));
+                
                 return;
 
                 /*
@@ -202,6 +205,18 @@ namespace btPrint4wp
         {
             NavigationService.Navigate(new Uri("/PrintfilesList.xaml", UriKind.Relative));
             
+        }
+
+        private void PhoneApplicationPage_Loaded(object sender, RoutedEventArgs e)
+        {
+            // Get a reference to the NavigationService that navigated to this Page 
+            NavigationService ns = this.NavigationService;
+            ns.Navigating += ns_Navigating;            
+        }
+
+        void ns_Navigating(object sender, System.Windows.Navigation.NavigatingCancelEventArgs e)
+        {
+            System.Diagnostics.Debug.WriteLine(e.Uri.ToString() + ":" + e.NavigationMode.ToString());
         }
 
         // Sample code for building a localized ApplicationBar

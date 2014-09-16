@@ -16,8 +16,8 @@
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent" Height="640">
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto" MinHeight="149"/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
 
         <!--TitlePanel contains the name of the application and page title-->
@@ -27,24 +27,28 @@
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
-        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="14,23,10,-23">
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="14,0,10,0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <ListBox x:Name="filelist" Margin="0,85,0,0" SelectionChanged="listBox_SelectionChanged" Foreground="#FF80FF00" FontSize="36" Height="384" VerticalAlignment="Top" >
+            <ListBox x:Name="filelist" Margin="0,145,0,0" SelectionChanged="listBox_SelectionChanged" Foreground="#FF80FF00" FontSize="36" Height="324" VerticalAlignment="Top" >
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <Button Width="Auto" Height="180" Click="Button_Click" Tag="{Binding filename}" >
                             <Button.Content>
-                                <StackPanel Orientation="Horizontal" Height="80" Width="Auto">
-                                    <Image Source="{Binding fileimage}" Width="80" Height="80"/>
-                                    <StackPanel Orientation="Horizontal" Height="80">
-                                        <TextBlock TextWrapping="Wrap" MaxWidth="120" FontSize="22" Text="{Binding filedescription}" MaxHeight="80" Margin="0,0,4,0" Foreground="White"/>
-                                    </StackPanel>
-                                    <StackPanel Orientation="Horizontal" Height="80">
-                                        <TextBlock TextWrapping="Wrap" MaxWidth="120" FontSize="22"  Text="{Binding filehelp}" MaxHeight="80" Margin="4,0,0,0" Foreground="White"/>
-                                    </StackPanel>
-                                </StackPanel>
+                                <Grid x:Name="buttongrid" Width="400">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="80" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Image Grid.Row="0" Grid.Column="0" Source="{Binding fileimage}" Width="80" Height="80"/>
+                                    <TextBlock Grid.Row="0" Grid.Column="1" FontSize="22" Text="{Binding filedescription}" TextWrapping="Wrap"/>
+                                    <TextBlock Grid.Row="0" Grid.Column="2" FontSize="22"  Text="{Binding filehelp}" TextWrapping="Wrap"/>
+                                </Grid>
                             </Button.Content>
                         </Button>
                     </DataTemplate>
