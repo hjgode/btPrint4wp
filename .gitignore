@@ -1,3 +1,17 @@
+*.bak
+thumbs.db
+ 
+App_Data/
+Bin/
+Obj/
+PerfLogs/
+_ReSharper.*/
+tmp/
+Bin/Debug/*
+
+*.user
+*.suo
+
 # Windows image file caches
 Thumbs.db
 ehthumbs.db
