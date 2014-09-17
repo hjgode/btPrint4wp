@@ -2,7 +2,7 @@
 thumbs.db
  
 App_Data/
-Bin/
+Bin/*
 Obj/
 PerfLogs/
 _ReSharper.*/

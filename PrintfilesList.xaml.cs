@@ -17,10 +17,10 @@ namespace btPrint4wp
         StorageFolder InstallationFolder = Windows.ApplicationModel.Package.Current.InstalledLocation;
         public string filename = "";
 //        List<demoFile> demoFiles=new List<demoFile>();
-//        DemoFilesXMLBased myDemoFiles = new DemoFilesXMLBased(); //build a list of xml print infos
+//        static DemoFilesXMLBased myDemoFiles = new DemoFilesXMLBased(); //build a list of xml print infos
 
             //either use file based list
-            //DemoFilesFileBased demoFiles = new DemoFilesFileBased();
+            //static DemoFilesFileBased demoFiles = new DemoFilesFileBased();
             
             // or use xml based file list
         //static to get same result on page back and for navigation, otherwise listbox is empty on subsequent navigateTo
