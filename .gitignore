@@ -3,6 +3,8 @@ thumbs.db
  
 App_Data/
 Bin/*
+Bin/Debug/Assets/*
+Bin/Debug/*
 Obj/
 PerfLogs/
 _ReSharper.*/
@@ -57,3 +59,5 @@ Icon
 # Files that might appear on external disk
 .Spotlight-V100
 .Trashes
+
+Bin/Debug/Assets/ApplicationIcon.png
