@@ -23,6 +23,8 @@ using Microsoft.Phone.Tasks;
 
 using BTConnection;
 
+using Bluetooth;
+
 namespace btPrint4wp
 {
     public partial class MainPage : PhoneApplicationPage
@@ -54,6 +56,27 @@ namespace btPrint4wp
             //BuildLocalizedApplicationBar();
         }
 
+        /// <summary>
+        /// Connection to BT Device
+        /// </summary>
+        /// <param name="MacAddress"></param>
+        /// <returns></returns>
+        private async Task connectionTest(string MacAddress)
+        {
+            try
+            {
+                Bluetooth.BTConnection btpd = new Bluetooth.BTConnection();
+                await btpd.ConnectToDevice(MacAddress);
+
+                ///Test data t send Waiting for datasheet
+                //byte[] data_to_send = new byte[] { 0X01, 0X02, 0X03 };
+                //await btpd.Send_Data(data_to_send, 1, this.txtblkAddress.Text);
+            }
+            catch (BluetoothDeviceException ex)
+            {
+                MessageBox.Show(ex.Message.ToString() + "  " +  ex.HResult + "  " +ex.Message);
+            }
+        } 
 
         void btConn_ConnectDone(Windows.Networking.HostName deviceHostName)
         {
@@ -109,25 +132,33 @@ namespace btPrint4wp
             task.Show();
 
         }
-        private void btConnect_Click(object sender, RoutedEventArgs e)
+
+        private async void btConnect_Click(object sender, RoutedEventArgs e)
         {
-            if (peerInformation == null)
-            {
-                addLog("Please use search first");
-                ShellToast toast = new ShellToast();
-                toast.Content = "Please use search first";
-                toast.Title = "Error";
-                toast.Show();
-                return;
-            }
-            if (btConn.isConnected)
-            {
-                addLog("Already connected. Disconnect first!");
-                return;
-            }
-            btConn.Connect(peerInformation.HostName);
-            return;
+
+            //Modify the connection with your device mac Address
+            var macAddress = "001208092929";
+            await connectionTest(macAddress);
         }
+        //private void btConnect_Click(object sender, RoutedEventArgs e)
+        //{
+        //    if (peerInformation == null)
+        //    {
+        //        addLog("Please use search first");
+        //        ShellToast toast = new ShellToast();
+        //        toast.Content = "Please use search first";
+        //        toast.Title = "Error";
+        //        toast.Show();
+        //        return;
+        //    }
+        //    if (btConn.isConnected)
+        //    {
+        //        addLog("Already connected. Disconnect first!");
+        //        return;
+        //    }
+        //    btConn.Connect(peerInformation.HostName);
+        //    return;
+        //}
 
         private void btnPrint_Click(object sender, RoutedEventArgs e)
         {
