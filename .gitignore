@@ -2,14 +2,12 @@
 thumbs.db
  
 App_Data/
-Bin/*
-Bin/Debug/Assets/*
-Bin/Debug/*
+
 Obj/
 PerfLogs/
 _ReSharper.*/
 tmp/
-Bin/Debug/*
+
 
 *.user
 *.suo
@@ -18,8 +16,7 @@ Bin/Debug/*
 Thumbs.db
 ehthumbs.db
 
-Bin\*
-Bin/*
+
 
 *\obj\*
 *\Bin\*
